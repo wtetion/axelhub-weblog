@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "axelhub-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-11",
+  "assets": {
+    "directory": "./public/",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "axelhub-weblog",
+      "database_id": "PASTE_YOUR_D1_DATABASE_ID_HERE",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "PUBLIC_BASE_URL": "",
+    "WORKERS_SUBDOMAIN": ""
+  }
+}
