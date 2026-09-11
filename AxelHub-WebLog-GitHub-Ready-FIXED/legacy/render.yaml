@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: axelhub-weblog
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: PUBLIC_BASE_URL
+        value: http://127.0.0.1:3000
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: AXEL_API_KEY
+        sync: false
+    disk:
+      name: axelhub-data
+      mountPath: /var/data
+      sizeGB: 1
